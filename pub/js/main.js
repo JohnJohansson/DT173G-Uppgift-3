@@ -1,0 +1,1 @@
+function toggle(){var l=document.getElementById("hamburgerMenuID");"block"===l.style.display?l.style.display="none":l.style.display="block"}console.log("Hello gulp! From one.js"),console.log("Hello gulp from two.js");
