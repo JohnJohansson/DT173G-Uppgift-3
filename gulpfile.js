@@ -20,6 +20,9 @@ const cssnano = require('gulp-cssnano');
 // we are using imagemin to minimize the images
 const imagemin = require('gulp-imagemin');
 
+// Browser sync to update the browser automaticly kinda like live server
+const browserSync = require('browser-sync').create();
+
 // sass
 const sass = require('gulp-sass')(require('sass'));
 
@@ -83,8 +86,15 @@ function imageTask() {
 function watchTask() {
     // wich files to watch, since there are more then one we make an array
     //then we tell it what to do with them.
-    watch([files.htmlPath, files.cssPath, files.jsPath, files.imgPath, files.sassPath], parallel(copyHTML, cssTask, jsTask, imageTask, sassTask));
+
+    // added a init for browser syncs live server
+    browserSync.init({
+        server: "./pub"
+    });
+    watch([files.htmlPath, files.cssPath, files.jsPath, files.imgPath, files.sassPath], parallel(copyHTML, cssTask, jsTask, imageTask, sassTask)).on('change', browserSync.reload);
 }
+
+
 
 // exports.default = copyHTML; this is for just one
 // with parallel we can send them all paralell to each other, we must export a function for it to work
