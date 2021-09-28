@@ -1,7 +1,10 @@
 # DT173G-Webbutveckling-3
 School assignment to learn git
 
-## Assignment 2
+## Assignment 3
+An continuation on assigment 2
+
+In this continuation I added suport for cscc in my gulp projekt
 
 NodeJs and automatisation with Gulp.
 
@@ -141,6 +144,9 @@ To start gulp and run the code you just need to write "gulp" in the terminal, no
 
 You cant use the terminal while running the autmatic updater, to stop it hold down ctrl+C in the terminal.
 
+**Update 1.1**
+
+Added suport for browser sync.
 
 
 
